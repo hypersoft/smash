@@ -1,0 +1,62 @@
+:HELP
+ 
+  smash --help
+    Show this help screen and exit with an error.
+
+  smash --get-html-help-root
+    Prints the location of the html files installation. This 
+    location is suitable for browsing from file or http-service.
+
+	* THESE FEATURES ARE NOT YET AVAILABLE
+--------------------------------------------------------------------------------
+
+:SYNOPSIS
+
+  smash [OPTIONS] [ACTION] [PARAMETERS]
+    Runs an action with the given options and parameters.
+
+--------------------------------------------------------------------------------
+
+:OPTIONS
+
+  smash [OPTIONS] -p [OPTIONS] [ACTION] [PARAMETERS]
+    Prints the result of the ACTION as a string on standard out.  
+
+--------------------------------------------------------------------------------
+	
+:ACTIONS
+
+  RAW SOURCE MODE
+  smash [OPTIONS] -r [PARAMETERS];
+    Read script from standard input. PARAMETERS will be supplied to
+    the script. This is the default action.
+
+	* THESE FEATURE IS NOT YET AVAILABLE
+
+  SHELL SOURCE MODE
+  smash [OPTIONS] -s FILE [PARAMETERS];
+  smash [OPTIONS] --shell-script FILE [PARAMETERS];
+    Read file from FILE. The script will have the calling process's
+    IO handles. Any parameters supplied will be supplied to the
+    script.
+
+	  Accordingly, a smash shell script shebang line is of the form:
+
+		#!/usr/bin/smash --shell-script
+		...
+		
+--------------------------------------------------------------------------------
+
+:RAW SOURCE MODE OPTIONS
+
+  These options will throw errors if the ACTION is not RAW SOURCE 
+	MODE. These options must be supplied before the -r switch.
+
+	SET SCRIPT LINE NUMBER
+  smash [OPTIONS] -l LINE [OPTIONS] [ACTION] [PARAMETERS]
+
+	SET SCRIPT FILE NAME
+  smash [OPTIONS] -n NAME [OPTIONS] [ACTION] [PARAMETERS]
+
+	* THESE FEATURES ARE NOT YET AVAILABLE
+--------------------------------------------------------------------------------

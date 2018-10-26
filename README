@@ -1,0 +1,15 @@
+:ABOUT
+
+ Asset: Smash Javascript Environment
+
+    Vendor: Hypersoft-Systems: U.-S.-A.
+     Model: Classic 1.0
+  Features: M185C "SpiderMonkey" Javascript Interpreter
+
+--------------------------------------------------------------------------------
+
+:BEGIN
+
+  To build smash, read the directions in BUILD.
+
+--------------------------------------------------------------------------------
