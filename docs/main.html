@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<title>Smash Javascript Shell Developer's Manual</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="resource/w3.css">
+	<link rel="stylesheet" href="resource/w3-colors-metro.css">
+	<link rel="stylesheet" href="resource/w3-theme-grey.css">
+
+</head>
+
+<body class="w3-container">
+	<h3>Getting Started </h3><img style="float:right; width:25%" src="resource/shell.jpg">
+	<p>The first thing you need to do to get started with smash scripting, is check your system for
+		compatibility with smash and the smash build system.
+		The following table lists the build system dependencies of the smash project. We will cover the smash-software-run-time-requiem after satisifcation of the smash-software-build-time-requiems are known.</p>
+	<p>The first field in the table is a reference to an external project by it's official project name or official package name. Official project name is preffered, followed by a 'generified' package-name within parenthesis.
+		The Dev. Version field, refers to the current version of the program run on the machine of the smash-project-maintainer(s).</p>
+	<p>Finally, the notes field provides any extra information that may be beneficial knowledge about the external project.</p>
+	<div class="w3-cell-row">
+		<div class="w3-cell w3-card-4 w3-theme-dark">
+			<header class="w3-container w3-theme-d3">
+				<h4>Smash Build System Requirements</h4>
+			</header>
+
+			<table class="w3-table-all">
+				<tr>
+					<th>Package</th>
+					<th>Dev. Version</th>
+					<th style="width:33%">Notes</th>
+				</tr>
+				<tr>
+					<td>GNU Compiler Collection (GCC)</td>
+					<td>8.2.1</td>
+					<td>r20180831 (ArchLinux)</td>
+				</tr>
+				<tr>
+					<td>GNU Make</td>
+					<td>4.2.1	</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>GNU Automatic Configuration Tools (autoconf)</td>
+					<td>2.13</td>
+					<td>autoconf version 2.13 is required by the Mozilla js-1.8.5 buid system.</td>
+				</tr>
+				<tr>
+					<td>GNU Bourne Again Shell (BASH)</td>
+					<td>4.4</td>
+					<td></td>
+				</tr>
+			</table>
+
+		</div>
+
+	</div>
+  <div class="w3-panel w3-leftbar w3-border-red w3-text-red">
+			<p>This is a general, rather than complete listing of dependencies. A basic build environment is required for compilation of all C/C++ programs and libraries.</p>
+		</div>
+</body>
+
+</html>
