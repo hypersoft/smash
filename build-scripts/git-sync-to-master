@@ -1,12 +1,14 @@
 #!/bin/smash -s
 
+/* global system, parameter, echo */
+
 function command(command) {
 	// looks like we need a command version of system... returning a boolean.
-	return system(command) == 0;
+	return system(command) === 0;
 }
 
 var push = false;
-if (parameter[1] == '-p') push = true;
+if (parameter[1] === '-p') push = true;
 
 var capture = system.read("git branch | grep '*'");
 
@@ -16,7 +18,7 @@ if (capture.status !== 0) {
 
 var branch = capture.output.replace('\n', '').split(" ")[1];
 
-if (branch == 'master') {
+if (branch === 'master') {
 	echo.error("wrong branch for sync to master");
 	exit(1);
 }
