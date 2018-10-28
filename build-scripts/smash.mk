@@ -21,7 +21,7 @@ else
    DEBUG_FLAGS = -O3
 endif
 
-bin2inc = scripts/bin2inc
+bin2inc = build-scripts/bin2inc
 bin2inc_source_files = $(shell scripts/get-files src -name '*.b2i')
 
 # All Target
@@ -93,14 +93,6 @@ clean:
 
 install:
 	@if test '!' -e $(build_path)/bin/smash; then { echo "you must call \`\$ make smash'; before calling $@"; false; }; fi;
-	@if test -e $(smash_installation_path); then \
-	  if test '!' -e $(smash_resource_path)/core.jsh; then \
-	    echo "make $(operation_cancelled) $(smash_installation_path) exists and no smash core.jsh was found in $(smash_resource_path)."; \
-	    echo "thinking-cause: application naming conflict or development process error." >&2; \
-	    echo "recommendation: delete the file or application with the path $(smash_installation_path) and try again." >&2; \
-	  false; \
-	  fi; \
-	fi;
 	@cp -v $(build_path)/bin/smash $(smash_installation_path);
 	@mkdir -vp $(smash_resource_path);
 	@echo "installing newest smash resources at: $(smash_resource_path) ...";
