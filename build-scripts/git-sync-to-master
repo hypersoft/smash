@@ -16,4 +16,5 @@ if (system('git checkout master') === 0) {
 		system('git checkout '+ branch);
 		exit(1);
 	}
+	system('git checkout '+ branch);
 } else exit(1);
