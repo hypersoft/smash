@@ -74,7 +74,7 @@ $(build_path)/StringBuffer/libStringBuffer.a: $(build_path)/StringBuffer/StringB
 $(build_path)/mozjs/lib/libjs_static.a:
 	@if test $$UID == 0; then echo $(root_nopped)  >&2; false; fi;
 	@mkdir -vp $(build_path)/mozjs;
-	@scripts/monkey.sh 
+	@build-scripts/monkey.sh 
 
 $(build_path)/bin/smash: $(build_path)/smash/smash.o $(build_path)/StringBuffer/libStringBuffer.a $(build_path)/mozjs/lib/libjs_static.a
 	@if test $$UID == 0; then echo $(root_nopped)  >&2; false; fi;
@@ -88,7 +88,7 @@ $(build_path)/bin/smash: $(build_path)/smash/smash.o $(build_path)/StringBuffer/
 # Other Targets
 clean:
 	-@$(RM) $(build_path)
-	-@scripts/monkey.sh $@
+	-@build-scripts/monkey.sh $@
 	-@echo ' '
 
 install:
@@ -105,4 +105,4 @@ uninstall:
 
 configuration:
 	@if test $$UID == 0; then echo $(root_nopped)  >&2; false; fi;
-	@scripts/monkey.sh $@
+	@build-scripts/monkey.sh $@
