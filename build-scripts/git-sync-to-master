@@ -9,13 +9,9 @@ if (branch == 'master') {
 	exit(1);
 }
 
-var script = [
-	"git checkout master",
-	"&& git merge " + branch,
-  ((push === true)?"&& git push":""),
-	"git checkout " + branch
-];
-
-var code = system(script.join(" "));
-
-exit(code);
+if (system('git checkout master') === 0) {
+	if (system('git merge ' + branch) === 0) {
+		if (push) system('git push');
+		system('git checkout '+ branch);
+	} else exit(1);
+} else exit(1);
