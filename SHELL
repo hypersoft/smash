@@ -10,8 +10,9 @@ exit(code)
  to indicate error, return 0 to indicate success.
 
 echo(...)
- Converts the parameters to string and prints them on the standard output.
- If the content does not end with a newline character, one will be appended.
+ Converts the parameters to string, separated by space and prints them on the 
+ standard output. If the content does not end with a newline character, one will
+ be appended.
 
 echo.error(...)
  This function operates exactly like echo, but the content is written to
