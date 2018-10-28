@@ -1,5 +1,10 @@
 #!/bin/smash -s
 
+function command(command) {
+	// looks like we need a command version of system... returning a boolean.
+	return system(command) == 0;
+}
+
 var push = false;
 if (parameter[1] == '-p') push = true;
 
@@ -9,8 +14,8 @@ if (branch == 'master') {
 	exit(1);
 }
 
-if (system('git checkout master') === 0) {
-	if (system('git merge ' + branch) === 0) {
+if (command('git checkout master')) {
+	if (command('git merge ' + branch)) {
 		if (push) system('git push');
 	} else {
 		system('git checkout '+ branch);
