@@ -6,12 +6,13 @@ if (parameter[1] == '-p') push = true;
 var branch = system.read("git branch | grep '*'").output.split(" ")[1];
 if (branch == 'master') {
 	echo.error("wrong branch for sync to master");
+	exit(1);
 }
 
 var script = [
 	"git checkout master",
 	"&& git merge " + branch,
-  ((push === true)?"&& git push":""),
+  ((push === true)?"&& git push":" || exit $?;"),
 	"git checkout " + branch
 ];
 
