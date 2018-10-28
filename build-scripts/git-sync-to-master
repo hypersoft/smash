@@ -1,0 +1,5 @@
+#!/bin/smash -s
+
+var code = system("git checkout master && git merge work; git checkout work");
+
+exit(code);
