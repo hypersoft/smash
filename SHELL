@@ -6,55 +6,55 @@ include(file)
  Compiles and executes the given Javascript.
 
 exit(code)
-  Exits smash immediately with the given exit code. Return 1 or more 
-	to indicate error, return 0 to indicate success.
+ Exits smash immediately with the given exit code. Return 1 or more 
+ to indicate error, return 0 to indicate success.
 
 echo(...)
-  Converts the parameters to string and prints them on the standard output.
-	If the content does not end with a newline character, one will be appended.
+ Converts the parameters to string and prints them on the standard output.
+ If the content does not end with a newline character, one will be appended.
 
 echo.error(...)
-  This function operates exactly like echo, but the content is written to
-	standard error rather than standard output.
+ This function operates exactly like echo, but the content is written to
+ standard error rather than standard output.
 
 keys()
-  Gets an array of all defined environment variable keys.
+ Gets an array of all defined environment variable keys.
 
 get(key)
-  Gets a shell environment variable by key. 
+ Gets a shell environment variable by key. 
 
 set(key, value)
-  Sets a shell environment variable's value by key.
+ Sets a shell environment variable's value by key.
 
 clear(key)
-  Deletes a shell environment variable by key.
+ Deletes a shell environment variable by key.
 
 getFileContent(file)
-  Gets the content of a file as a String.
+ Gets the content of a file as a String.
 
 setFileContent(file, content)
-  Sets the content of a file as a String. If the file does
-	not exist, it will be created.
+ Sets the content of a file as a String. If the file does
+ not exist, it will be created.
 
 setFileContent.append(file, content)
-  Works like setFileContent, but the file content provided will
-	be appended to any existing file content.
+ Works like setFileContent, but the file content provided will
+ be appended to any existing file content.
 
 system(command)
-  Runs a system command and returns the status.
+ Runs a system command and returns the status.
 
 system.write(command, data)
-  Runs a s system command and returns the status after writing
-	the data to the command's standard input handle.
+ Runs a s system command and returns the status after writing
+ the data to the command's standard input handle.
 
 system.read(command)
-  Runs a system command and returns an object with two properties:
+ Runs a system command and returns an object with two properties:
 
-	  1: (String) output
-		2: (Double) status
+  1: (String) output
+  2: (Double) status
 
-	The status is the result of the command execution, and output
-	is the output of the command.
+ The status is the result of the command execution, and output
+ is the output of the command.
 
 readLine(prompt)
-  Reads a line of input from the standard input. Prompt is printed on stderr.
+ Reads a line of input from the standard input. Prompt is printed on stderr.
