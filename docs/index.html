@@ -1,108 +1,45 @@
 <html>
 
 <head>
-  <title>Smash Javascript Shell Developer's Manual</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Smash: Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="resource/w3.css">
-  <link rel="stylesheet" href="resource/w3-theme-grey.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+	<link rel="stylesheet" href="resource/w3.css">
+	<link rel="stylesheet" href="resource/w3-theme-grey.css">
 
-    /* The navigation bar */
-    .navbar {
-      overflow: hidden;
-      position: fixed;
-      /* Set the navbar to fixed position */
-      top: 0;
-      /* Position the navbar at the top of the page */
-      width: 100%;
-      /* Full width */
-      z-index: 5;
-    }
-
-*, *:before, *:after
-{
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-html, body
-{
-    width: 100%;
-    height: 100%;
-    
-    margin: 0;
-    padding: 0;
-}
-
-.flexbox-parent
-{
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: flex-start; /* align items in Main Axis */
-    align-items: stretch; /* align items in Cross Axis */
-    align-content: stretch; /* Extra space in Cross Axis */
-            
-}
-
-.flexbox-item
-{
-   /* padding: 8px; */
-}
-.flexbox-item-grow
-{
-    flex: 1; /* same as flex: 1 1 auto; */
-}
-
-.fill-area
-{
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: flex-start; /* align items in Main Axis */
-    align-items: stretch; /* align items in Cross Axis */
-    align-content: stretch; /* Extra space in Cross Axis */
-    
-}
-.fill-area-content
-{
-    
-    /* Needed for when the area gets squished too far and there is content that can't be displayed */
-    overflow: auto; 
-}
-  </style>
 </head>
 
-<body class="">
+<body class="w3-container">
 
-    <div class="flexbox-parent">
-        <div class="flexbox-item header" style="height:50.3px;">
-            Header
-        </div>
-        
-        <div class="flexbox-item fill-area content flexbox-item-grow">
-            <iframe id=MAINFRAME src="main.html" class="fill-area-content flexbox-item-grow" style="border-style: none;">
-                Sorry your browser does not support inline frames.
-             </iframe>
-        </div>
-        
-        <div class="flexbox-item footer"></div>
-    </div>
-
-  <div id=NAVBAR class="navbar w3-bar w3-container w3-theme-d3">
-        <div class="w3-left">
-            <h4 style="font-weight:bold">SMASH</h4>
-          </div>
-        </div>
+	<h3>Smash: About</h3><img style="float:right; width:20%" src="resource/shell.jpg">
+	<p>Smash is an Open Source Shell Mode Javascript Interpreter. 
+		Smash features an 
+			M185C (Mozilla "SpiderMonkey" 1.8.5 Core) Javascript Interpreter with
+			Dynamic C library interface extensions.
+	</p>
+	<p>Smash scripts are run in a Unix like environment. Users may run smash scripts with
+		parameters as normal operating system commands. Smash provides builtin-support for normal
+	shell operations such as working with input, output and error handles of the standard
+	C library specification.</p>
+	<p>Javascript applications written for the smash platform can access all
+	C libraries published on the host system, run system commmands, manage environment variables, write command input, read command output, setup command pipes and other shell like things.</p>
+	<div>
+		<br>
+	<h3>Smash: Help</h3><img class="w3-right" src="resource/javascript-badge.png" style="width:20%">
+	<p>
+		<a class="w3-button w3-theme-l3" href="build/out-of-the-box.html">Smash Out of the Box</a>
+		<a class="w3-button w3-theme-l3" href="build/specification.html">Smash Build Specification</a>
+		<a class="w3-button w3-theme-l3" href="build/">Smash Build Guide</a>
+		<a class="w3-button w3-theme-l3" href="shell/">Smash Shell Documentation</a>
+	</p>
+</div>
+	<br>
+	<h3>Smash: Online Resources</h3>
+	<p>
+		<a class="w3-button w3-theme-l3" href="https://hypersoft.github.io/smash">The Smash Home Page</a>
+		<a class="w3-button w3-theme-l3" href="https://github.com/hypersoft/smash">The Smash Project on GitHub</a>
+	</p>
+	<br>
 
 </body>
 
