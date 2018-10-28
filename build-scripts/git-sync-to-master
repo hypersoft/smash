@@ -12,6 +12,8 @@ if (branch == 'master') {
 if (system('git checkout master') === 0) {
 	if (system('git merge ' + branch) === 0) {
 		if (push) system('git push');
+	} else {
 		system('git checkout '+ branch);
-	} else exit(1);
+		exit(1);
+	}
 } else exit(1);
