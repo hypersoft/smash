@@ -50,7 +50,7 @@ $(build_path)/smash/smash.o: src/hypersoft/smash/smash.cpp
 	@$(building_source)
 	@mkdir -vp $(build_path)/smash;
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ $(DEBUG_FLAGS) -DSMASH_RESOURCE_PATH=$(smash_resource_path) -DSMASH_MAIN_LOADER=$(smash_resource_path)/smash.jsh -I"src/hypersoft/StringBuffer" -I"$(build_path)/mozjs/include" -Wall -c -fmessage-length=0 -MMD -MP -MF"$(build_path)/smash/smash.d" -MT"$(build_path)/smash/smash.d" -o "$@" "$<"
+	g++ $(DEBUG_FLAGS) `pkg-config --cflags nspr` -DSMASH_RESOURCE_PATH=$(smash_resource_path) -DSMASH_MAIN_LOADER=$(smash_resource_path)/smash.jsh -I"src/hypersoft/StringBuffer" -I"$(build_path)/mozjs/include" -Wall -c -fmessage-length=0 -MMD -MP -MF"$(build_path)/smash/smash.d" -MT"$(build_path)/smash/smash.d" -o "$@" "$<"
 	@$(source_operation_complete)
 	@echo ' '
 
