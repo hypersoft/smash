@@ -3,6 +3,8 @@
 /* global system, parameter */
 
 setFileContent('js.out', parameter.join(", ") + '\n');
+echo(JSON.stringify(fileStatus('js.out')));
+
 var output = getFileContent('js.out');
 echo("file contents:", output);
 system('rm js.out');
