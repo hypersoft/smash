@@ -90,7 +90,7 @@ JSBool ShellReadLine(JSContext *cx, uintN argc, jsval *vp) {
 	free(line);
 	*vp = STRING_TO_JSVAL(x);
 	return JS_TRUE;
-	
+
 }
 
 JSBool ShellClear(JSContext *cx, uintN argc, jsval *vp) {
@@ -99,14 +99,14 @@ JSBool ShellClear(JSContext *cx, uintN argc, jsval *vp) {
 
 	JSString *str = JS_ValueToString(cx, argv[0]);
 
-	JSAutoByteString cmd(cx, str);
-	if (!cmd) {
+	JSAutoByteString key(cx, str);
+	if (!key) {
 		JS_ReportError(cx, "can't convert environment variable key to c string");
 		JS_SET_RVAL(cx, vp, JSVAL_VOID);
 		return JS_FALSE;
 	}
 
-	unsetenv(cmd.ptr());
+	unsetenv(key.ptr());
 
 	*vp = JSVAL_TRUE;
 	return JS_TRUE;
@@ -115,7 +115,7 @@ JSBool ShellClear(JSContext *cx, uintN argc, jsval *vp) {
 
 JSBool ShellKeys(JSContext *cx, uintN argc, jsval *vp) {
 
-    jsval *argv = JS_ARGV(cx, vp);
+	jsval *argv = JS_ARGV(cx, vp);
 
 	JSObject* argsObj = JS_NewArrayObject(cx, 0, NULL);
 	int i = 0;
@@ -678,7 +678,7 @@ int SpiderMonkeyMain(int argc, char ** argv, char ** envp) {
 	jsval result;
 
 	while (1) {
-		static struct option long_options[] ={
+		static struct option long_options[] = {
 			/* These options set a flag. */
 			{"verbose", no_argument, &verbose_flag, 1},
 			{"brief", no_argument, &verbose_flag, 0},
