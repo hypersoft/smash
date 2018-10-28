@@ -29,6 +29,23 @@ set(key, value)
 clear(key)
  Deletes a shell environment variable by key.
 
+fileExists(file)
+ Checks for the existence of a file.
+
+readableFile(file)
+ Checks that a file is readable.
+
+writableFile(file)
+ Checks thata a file is writable.
+
+fileStatus(file)
+ Gets extended information about a file as an object.
+
+  1: (Number) type (1 = file, 2 = directory, 3 = other)
+  2: (Number) creationTime
+  3: (Number) modificationTime
+  4: (Number) size (in bytes)
+
 getFileContent(file)
  Gets the content of a file as a String.
 
