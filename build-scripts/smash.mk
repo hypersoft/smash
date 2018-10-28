@@ -93,10 +93,11 @@ clean:
 
 install:
 	@if test '!' -e $(build_path)/bin/smash; then { echo "you must call \`\$ make smash'; before calling $@"; false; }; fi;
-	@cp -v $(build_path)/bin/smash $(smash_installation_path);
+	@cp -v -u $(build_path)/bin/smash $(smash_installation_path);
 	@mkdir -vp $(smash_resource_path);
 	@echo "installing newest smash resources at: $(smash_resource_path) ...";
 	@cp -vR -u src/hypersoft/smash/scripts/* $(smash_resource_path)
+	@cp -vR -u HELP SHELL STATUS docs $(smash_resource_path)
 	@echo ''
 	
 uninstall:
