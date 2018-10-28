@@ -1,20 +1,19 @@
 :BUILD :HOW-TO
 
-  You will require the following programs:
+ You will require the following programs:
 
-    sh,
-    autoconf-2.13,
-    GCC,
-    tar
-    binutils
+  sh,
+  autoconf-2.13,
+  GCC,
+  tar
+  binutils
 
-  You will require the following libraries:
+ You will require the following libraries:
 
-    nspr4,
-    pthread,
-    readline
+  nspr4,
+  pthread,
+  readline
 
-  At the terminal issue the following commands:
+ At the terminal issue the following commands:
 
-  make && sudo make install;
-
+ make && sudo make install;
