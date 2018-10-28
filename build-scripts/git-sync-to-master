@@ -8,7 +8,14 @@ function command(command) {
 var push = false;
 if (parameter[1] == '-p') push = true;
 
-var branch = system.read("git branch | grep '*'").output.split(" ")[1];
+var capture = system.read("git branch | grep '*'");
+
+if (capture.status !== 0) {
+	exit(capture.status);
+}
+
+var branch = capture.output.replace('\n', '').split(" ")[1];
+
 if (branch == 'master') {
 	echo.error("wrong branch for sync to master");
 	exit(1);
