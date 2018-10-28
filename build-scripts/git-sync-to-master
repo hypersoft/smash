@@ -1,5 +1,20 @@
 #!/bin/smash -s
 
-var code = system("git checkout master && git merge work; git checkout work");
+var push = false;
+if (parameter[1] == '-p') push = true;
+
+var branch = system.read("git branch | grep '*'").split(" ")[1];
+if (branch == 'master') {
+	echo.error("wrong branch for sync to master");
+}
+
+var script = [
+	"git checkout master",
+	"&& git merge " + branch,
+  ((push === true)?"&& git push":";"),
+	"git checkout " + branch
+];
+
+var code = system(script.join(" "));
 
 exit(code);
